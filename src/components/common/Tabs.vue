@@ -19,7 +19,7 @@
       </el-dropdown-menu>
     </el-dropdown>
     <el-tab-pane v-for="(item, index) in mainTabs" :key="item.name" :label="item.title" :name="item.name">
-      <el-card >
+      <el-card :body-style="siteContentViewHeight">
         <keep-alive>
           <router-view v-if="item.name===mainTabsActiveName"/>
         </keep-alive>
@@ -35,6 +35,10 @@
       }
     },
     computed:{
+      documentClientHeight: {
+        get () { return this.$store.state.common.documentClientHeight },
+        set (val) { this.$store.commit('common/updateDocumentClientHeight', val) }
+      },
       menuList: {
         get () { return this.$store.state.common.menuList },
         set (val) { this.$store.commit('common/updateMenuList', val) }
@@ -50,6 +54,13 @@
       mainTabsActiveName: {
         get () { return this.$store.state.common.mainTabsActiveName },
         set (val) { this.$store.commit('common/updateMainTabsActiveName', val) }
+      },
+      siteContentViewHeight(){
+        var height = this.documentClientHeight - 50 - 30 - 2;
+        if (this.$route.meta.isTab) {
+          height -= 40;
+        }
+        return { minHeight: height + 'px' }
       }
     },
     methods: {
