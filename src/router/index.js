@@ -8,6 +8,7 @@ Vue.use(Router);
 const main = r =>require.ensure([],()=>r(require('@/components/common/Main')),'Main');
 const home = r =>require.ensure([],()=>r(require('@/components/common/Home')),'Home');
 const login = r => require.ensure([], () => r(require('@/components/page/Login')), 'Login');
+const theme = r => require.ensure([], () => r(require('@/components/page/theme')), 'theme');
 const fzthree = r => require.ensure([], () => r(require('@/components/page/403')), '403');
 const baseCharts = r => require.ensure([], () => r(require('@/components/page/BaseCharts')), 'BaseCharts');
 const baseTable = r => require.ensure([], () => r(require('@/components/page/BaseTable')), 'BaseTable');
@@ -26,7 +27,7 @@ export default new Router({
           path: '/home',
           component:home,
           name:'home',
-          meta: { title: '系统首页'}
+          meta: { title: '系统首页' }
         },
         {
           path: '/baseCharts',
@@ -46,6 +47,13 @@ export default new Router({
           name:'baseForm',
           meta: { title: '基础表单', isTab: true  }
         },
+        {
+          path: '/theme',
+          component:theme,
+          name:'theme',
+          meta: { title: '主题风格' }
+        },
+
         {
           path: '/403',
           component:fzthree,

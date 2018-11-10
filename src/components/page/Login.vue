@@ -22,7 +22,7 @@
 
   </div>
 </template>
-<script>
+<script type="text/ecmascript-6">
  export default{
    data:function(){
       return{
@@ -40,12 +40,19 @@
         }
       }
    },
+   computed:{
+     updataName: {
+       get () { return this.$store.state.user.updataName },
+       set (val) { this.$store.commit('user/updataName', val) }
+     }
+   },
    methods:{
      submitForm(formName) {
        this.$refs[formName].validate((valid,obj) => {
          if (valid) {
            localStorage.setItem('ms_username',this.ruleForm.username);
            this.$router.push('/');
+
          } else {
            console.log('error submit!!');
          return false;
@@ -61,7 +68,7 @@
     position: relative;
     width:100%;
     height:100%;
-    background-image: url(../../assets/login-bg.jpg);
+    background-image: url(../../assets/img/login-bg.jpg);
     background-size: 100%;
   }
   .ms-login{
