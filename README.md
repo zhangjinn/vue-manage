@@ -1,4 +1,4 @@
-# v-manage
+# vue-manage
 
 > A Vue.js project，一个基于vue+element-ui的后台管理系统
 
