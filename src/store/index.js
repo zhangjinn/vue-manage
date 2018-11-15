@@ -7,10 +7,12 @@ Vue.use(vuex);
 
 import common from './modules/common';//引入某个store对象
 import user from './modules/user';//引入某个store对象
+import drafting from './modules/drafting';//引入某个store对象
 
 export default new vuex.Store({
   modules: {
     common: common,
-    user: user
+    user: user,
+    drafting:drafting
   }
 })

@@ -1,0 +1,26 @@
+
+{
+  "total":{
+    "title":"饼状图标题",
+    "seriesName":"标题重要信息",
+    "legendInfo":["区块A","区块B","区块C","区块D"],
+    "classifies":[
+      {
+        "name":"区块A",
+        "value":12
+      },
+      {
+        "name":"区块B",
+        "value": 7
+      },
+      {
+        "name":"区块C",
+        "value":11
+      },
+      {
+        "name":"区块D",
+        "value":5
+      }
+    ]
+  }
+}

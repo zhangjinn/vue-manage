@@ -13,6 +13,8 @@ const fzthree = r => require.ensure([], () => r(require('@/components/page/403')
 const baseCharts = r => require.ensure([], () => r(require('@/components/page/BaseCharts')), 'BaseCharts');
 const baseTable = r => require.ensure([], () => r(require('@/components/page/BaseTable')), 'BaseTable');
 const baseForm = r => require.ensure([], () => r(require('@/components/page/BaseForm')), 'BaseForm');
+const echarts = r => require.ensure([], () => r(require('@/components/page/Echarts')), 'Echarts');
+const drag = r => require.ensure([], () => r(require('@/components/page/DragList')), 'drag');
 
 export default new Router({
   routes: [
@@ -53,7 +55,18 @@ export default new Router({
           name:'theme',
           meta: { title: '主题风格' }
         },
-
+        {
+          path: '/echarts',
+          component:echarts,
+          name:'echarts',
+          meta: { title: 'echarts图表', isTab: true }
+        },
+        {
+          path: '/drag',
+          component:drag,
+          name:'drag',
+          meta: { title: '拖拽列表', isTab: true }
+        },
         {
           path: '/403',
           component:fzthree,

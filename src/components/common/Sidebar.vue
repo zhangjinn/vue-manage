@@ -86,13 +86,8 @@
           },
           {
             icon: 'el-icon-info',
-            index: 'icon',
-            title: '自定义图标'
-          },
-          {
-            icon: 'el-icon-info',
-            index: 'charts',
-            title: 'schart图表'
+            index: 'echarts',
+            title: 'echarts图表'
           },
           {
             icon: 'el-icon-info',
